@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base href="">
+    <title>Angular custom elements</title>
+    <script src="custom-button-element.js"></script>
+  </head>
+  <body>
+    <app-button label="First label"></app-button>
+    <script>
+      const button = document.querySelector('app-button');
+      button.addEventListener('action', (event)=>{
+          console.log(`Action created: ${event.detail}`);
+      });
+      setTimeout(()=>{
+        button.label = "Second label";
+      }, 4000);
+    </script>
+  </body>
+</html>
